@@ -2,17 +2,21 @@ package com.pluralsight;
 
 import java.math.BigDecimal;
 
-public abstract class Asset {
+public class House extends Asset {
 
     private String description;
     private String dateAcquired;
     private BigDecimal originalCost;
 
-    public Asset(String description, String dateAcquired, BigDecimal originalCost) {
+    public Asset(String description,
+                 String dateAcquired,
+                 BigDecimal originalCost) {
+
         this.description = description;
         this.dateAcquired = dateAcquired;
         this.originalCost = originalCost;
     }
+}
 
     public String getDescription() {
         return description;
