@@ -2,12 +2,13 @@ package com.pluralsight;
 
 import java.math.BigDecimal;
 
-public class House extends Asset {
+public abstract class Asset {
 
     private String description;
     private String dateAcquired;
     private BigDecimal originalCost;
 
+    // Constructor
     public Asset(String description,
                  String dateAcquired,
                  BigDecimal originalCost) {
@@ -16,8 +17,8 @@ public class House extends Asset {
         this.dateAcquired = dateAcquired;
         this.originalCost = originalCost;
     }
-}
 
+    // Getters
     public String getDescription() {
         return description;
     }
@@ -30,5 +31,6 @@ public class House extends Asset {
         return originalCost;
     }
 
+    // Abstract method
     public abstract BigDecimal getValue();
 }
