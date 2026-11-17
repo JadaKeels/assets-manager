@@ -1,6 +1,7 @@
 package com.pluralsight;
 import java.math.BigDecimal;
 import java.time.Year;
+
 public class Vehicle extends Asset {
 
     private String makeModel;
@@ -44,29 +45,20 @@ public class Vehicle extends Asset {
         int vehicleAge = Year.now().getValue() - year;
         BigDecimal value = getOriginalCost();
 
-        return value;
-    }
-
         if (vehicleAge <= 3) {
             value = value.multiply(BigDecimal.valueOf(0.97));
-        }
-
-        else if (vehicleAge <= 6) {
+        } else if (vehicleAge <= 6) {
             value = value.multiply(BigDecimal.valueOf(0.94));
-        }
-
-        else if (vehicleAge <= 10) {
+        } else if (vehicleAge <= 10) {
             value = value.multiply(BigDecimal.valueOf(0.92));
-        }
-
-        else {
+        } else {
             value = value.subtract(BigDecimal.valueOf(1000));
         }
 
         if (odometer > 100000 &&
                 !makeModel.toLowerCase().contains("honda") &&
                 !makeModel.toLowerCase().contains("toyota")) {
-            value = value.multiply(BigDecimal.valueOf(.75));
+            value = value.multiply(BigDecimal.valueOf(0.75));
         }
 
         return value;

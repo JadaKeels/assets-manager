@@ -2,15 +2,15 @@ package com.pluralsight;
 
 import java.math.BigDecimal;
 
-public class Asset {
+public abstract class Asset {
 
     private String description;
-    private String dateAcquried;
+    private String dateAcquired;
     private BigDecimal originalCost;
 
-    public Asset(String description, String dateAcquried, BigDecimal originalCost) {
+    public Asset(String description, String dateAcquired, BigDecimal originalCost) {
         this.description = description;
-        this.dateAcquried = dateAcquried;
+        this.dateAcquired = dateAcquired;
         this.originalCost = originalCost;
     }
 
@@ -18,23 +18,13 @@ public class Asset {
         return description;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getDateAcquried() {
-        return dateAcquried;
-    }
-
-    public void setDateAcquried(String dateAcquried) {
-        this.dateAcquried = dateAcquried;
+    public String getDateAcquired() {
+        return dateAcquired;
     }
 
     public BigDecimal getOriginalCost() {
         return originalCost;
     }
 
-    public void setOriginalCost(BigDecimal originalCost) {
-        this.originalCost = originalCost;
-    }
+    public abstract BigDecimal getValue();
 }
