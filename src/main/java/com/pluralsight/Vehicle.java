@@ -41,9 +41,11 @@ public class Vehicle extends Asset {
 
     @Override
     public BigDecimal getValue() {
-
         int vehicleAge = Year.now().getValue() - year;
         BigDecimal value = getOriginalCost();
+
+        return value;
+    }
 
         if (vehicleAge <= 3) {
             value = value.multiply(BigDecimal.valueOf(0.97));

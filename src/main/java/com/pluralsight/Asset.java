@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-import java.math.BigDecimal
+import java.math.BigDecimal;
 
 public class Asset {
 
