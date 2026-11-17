@@ -24,7 +24,6 @@ public class House extends Asset {
         this.squareFoot = squareFoot;
         this.lotSize = lotSize;
     }
-}
 
     public String getAddress() {
         return address;
